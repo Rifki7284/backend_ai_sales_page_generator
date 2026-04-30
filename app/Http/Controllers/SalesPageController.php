@@ -69,7 +69,7 @@ class SalesPageController extends Controller
 
         // 🔥 OPENROUTER (GRATIS)
         $response = Http::withHeaders([
-            'Authorization' => 'Bearer '.env('OPENROUTER_API_KEY'),
+            'Authorization' => 'Bearer '.config('services.openrouter.key'),
             'Content-Type' => 'application/json',
         ])->post('https://openrouter.ai/api/v1/chat/completions', [
             'model' => 'openrouter/auto',
@@ -198,7 +198,7 @@ class SalesPageController extends Controller
         ";
 
         $response = Http::withHeaders([
-            'Authorization' => 'Bearer '.env('OPENROUTER_API_KEY'),
+            'Authorization' => 'Bearer '.config('services.openrouter.key'),
             'Content-Type' => 'application/json',
         ])->post('https://openrouter.ai/api/v1/chat/completions', [
             'model' => 'openrouter/auto',
